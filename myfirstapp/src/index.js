@@ -1,14 +1,48 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import Header from './components/Header';
 import App from './components/App';
+import Rutes from "./components/Rutes.js"
+import Refugis from "./components/Refugis.js"
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <div className='bg-primary card'>
+        <Header />
+    </div>
+    <div className='card'>
+      <nav>
+        <ul className='nav nav-pilss'>
+          <li className='nav-item'>
+            <a href='/' className='nav-link'>Home</a>
+          </li>
+          <li className='nav-item'>
+            <a href='/Refugis' className='nav-link'>Refugis</a>
+          </li>
+          <li className='nav-item'>
+            <a href='/Rutes' className='nav-link'>Rutes</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App/>} />
+        <Route path="/refugis" element={<Refugis/>} >
+          <Route path=":id" element={<Refugis/>} />
+        </Route>
+        <Route path="/rutes" element={<Rutes/>} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
