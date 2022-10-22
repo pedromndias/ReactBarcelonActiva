@@ -39,7 +39,7 @@ function App() {
       </div>
       <div>
         {`Data is: ${data}`}
-        <FunctionalComponents1 childToParent={ childToParent } />
+        <FunctionalComponents1 childToParentTest={ childToParent } />
       </div>
     </>
   );
