@@ -2,14 +2,18 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 function Refugis() {
-    console.log("parameters", useParams());
+    const nombres = [1, 2, 3, 4, 5];
+    const listRefus = nombres.map((nombre) => 
+        <li key={nombre.toString()}><a href={`/refugis/${nombre}`}>Refugi {`${nombre}`}</a></li>
+    )
+    
+
     const { id } = useParams();
     return(
         <>
             <h1>Llista de refugis</h1>
             <ul>
-                <li><a href="/refugis/1">Refugis de Sant Salvador</a></li>
-                <li><a href="/refugis/2">Refugis de Pradell</a></li>
+                {listRefus}
             </ul>
             <h1>El refugi és: {id}</h1>
         </>

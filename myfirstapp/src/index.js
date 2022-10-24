@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css";
+import MyForm from './components/MyForm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,6 +32,9 @@ root.render(
           <li className='nav-item'>
             <a href='/Rutes' className='nav-link'>Rutes</a>
           </li>
+          <li className='nav-item'>
+            <a href='/contacta' className='nav-link'>Contacta</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -41,6 +45,7 @@ root.render(
           <Route path=":id" element={<Refugis/>} />
         </Route>
         <Route path="/rutes" element={<Rutes/>} />
+        <Route path="/contacta" element={<MyForm/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
